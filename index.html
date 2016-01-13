@@ -5,11 +5,411 @@
     <link rel="stylesheet" type="text/css" href="https://cdn.mxpnl.com/libs/mixpanel-platform/css/reset.css">
     <link rel="stylesheet" type="text/css" href="https://cdn.mxpnl.com/libs/mixpanel-platform/build/mixpanel-platform.v0.latest.min.css">
     <script src="https://cdn.mxpnl.com/libs/mixpanel-platform/build/mixpanel-platform.v0.latest.min.js"></script>
+    
+        <style>
+      table {
+  background-color: transparent;
+}
+caption {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  color: #777777;
+  text-align: left;
+}
+th {
+  text-align: left;
+}
+.table {
+  width: 100%;
+  max-width: 100%;
+  margin-bottom: 20px;
+}
+.table > thead > tr > th,
+.table > tbody > tr > th,
+.table > tfoot > tr > th,
+.table > thead > tr > td,
+.table > tbody > tr > td,
+.table > tfoot > tr > td {
+  padding: 8px;
+  line-height: 1.42857143;
+  vertical-align: top;
+  border-top: 1px solid #dddddd;
+}
+.table > thead > tr > th {
+  vertical-align: bottom;
+  border-bottom: 2px solid #dddddd;
+}
+.table > caption + thead > tr:first-child > th,
+.table > colgroup + thead > tr:first-child > th,
+.table > thead:first-child > tr:first-child > th,
+.table > caption + thead > tr:first-child > td,
+.table > colgroup + thead > tr:first-child > td,
+.table > thead:first-child > tr:first-child > td {
+  border-top: 0;
+}
+.table > tbody + tbody {
+  border-top: 2px solid #dddddd;
+}
+.table .table {
+  background-color: #ffffff;
+}
+.table-condensed > thead > tr > th,
+.table-condensed > tbody > tr > th,
+.table-condensed > tfoot > tr > th,
+.table-condensed > thead > tr > td,
+.table-condensed > tbody > tr > td,
+.table-condensed > tfoot > tr > td {
+  padding: 5px;
+}
+.table-bordered {
+  border: 1px solid #dddddd;
+}
+.table-bordered > thead > tr > th,
+.table-bordered > tbody > tr > th,
+.table-bordered > tfoot > tr > th,
+.table-bordered > thead > tr > td,
+.table-bordered > tbody > tr > td,
+.table-bordered > tfoot > tr > td {
+  border: 1px solid #dddddd;
+}
+.table-bordered > thead > tr > th,
+.table-bordered > thead > tr > td {
+  border-bottom-width: 2px;
+}
+.table-striped > tbody > tr:nth-of-type(odd) {
+  background-color: #f9f9f9;
+}
+.table-hover > tbody > tr:hover {
+  background-color: #f5f5f5;
+}
+table col[class*="col-"] {
+  position: static;
+  float: none;
+  display: table-column;
+}
+table td[class*="col-"],
+table th[class*="col-"] {
+  position: static;
+  float: none;
+  display: table-cell;
+}
+.table > thead > tr > td.active,
+.table > tbody > tr > td.active,
+.table > tfoot > tr > td.active,
+.table > thead > tr > th.active,
+.table > tbody > tr > th.active,
+.table > tfoot > tr > th.active,
+.table > thead > tr.active > td,
+.table > tbody > tr.active > td,
+.table > tfoot > tr.active > td,
+.table > thead > tr.active > th,
+.table > tbody > tr.active > th,
+.table > tfoot > tr.active > th {
+  background-color: #f5f5f5;
+}
+.table-hover > tbody > tr > td.active:hover,
+.table-hover > tbody > tr > th.active:hover,
+.table-hover > tbody > tr.active:hover > td,
+.table-hover > tbody > tr:hover > .active,
+.table-hover > tbody > tr.active:hover > th {
+  background-color: #e8e8e8;
+}
+.table > thead > tr > td.success,
+.table > tbody > tr > td.success,
+.table > tfoot > tr > td.success,
+.table > thead > tr > th.success,
+.table > tbody > tr > th.success,
+.table > tfoot > tr > th.success,
+.table > thead > tr.success > td,
+.table > tbody > tr.success > td,
+.table > tfoot > tr.success > td,
+.table > thead > tr.success > th,
+.table > tbody > tr.success > th,
+.table > tfoot > tr.success > th {
+  background-color: #dff0d8;
+}
+.table-hover > tbody > tr > td.success:hover,
+.table-hover > tbody > tr > th.success:hover,
+.table-hover > tbody > tr.success:hover > td,
+.table-hover > tbody > tr:hover > .success,
+.table-hover > tbody > tr.success:hover > th {
+  background-color: #d0e9c6;
+}
+.table > thead > tr > td.info,
+.table > tbody > tr > td.info,
+.table > tfoot > tr > td.info,
+.table > thead > tr > th.info,
+.table > tbody > tr > th.info,
+.table > tfoot > tr > th.info,
+.table > thead > tr.info > td,
+.table > tbody > tr.info > td,
+.table > tfoot > tr.info > td,
+.table > thead > tr.info > th,
+.table > tbody > tr.info > th,
+.table > tfoot > tr.info > th {
+  background-color: #d9edf7;
+}
+.table-hover > tbody > tr > td.info:hover,
+.table-hover > tbody > tr > th.info:hover,
+.table-hover > tbody > tr.info:hover > td,
+.table-hover > tbody > tr:hover > .info,
+.table-hover > tbody > tr.info:hover > th {
+  background-color: #c4e3f3;
+}
+.table > thead > tr > td.warning,
+.table > tbody > tr > td.warning,
+.table > tfoot > tr > td.warning,
+.table > thead > tr > th.warning,
+.table > tbody > tr > th.warning,
+.table > tfoot > tr > th.warning,
+.table > thead > tr.warning > td,
+.table > tbody > tr.warning > td,
+.table > tfoot > tr.warning > td,
+.table > thead > tr.warning > th,
+.table > tbody > tr.warning > th,
+.table > tfoot > tr.warning > th {
+  background-color: #fcf8e3;
+}
+.table-hover > tbody > tr > td.warning:hover,
+.table-hover > tbody > tr > th.warning:hover,
+.table-hover > tbody > tr.warning:hover > td,
+.table-hover > tbody > tr:hover > .warning,
+.table-hover > tbody > tr.warning:hover > th {
+  background-color: #faf2cc;
+}
+.table > thead > tr > td.danger,
+.table > tbody > tr > td.danger,
+.table > tfoot > tr > td.danger,
+.table > thead > tr > th.danger,
+.table > tbody > tr > th.danger,
+.table > tfoot > tr > th.danger,
+.table > thead > tr.danger > td,
+.table > tbody > tr.danger > td,
+.table > tfoot > tr.danger > td,
+.table > thead > tr.danger > th,
+.table > tbody > tr.danger > th,
+.table > tfoot > tr.danger > th {
+  background-color: #f2dede;
+}
+.table-hover > tbody > tr > td.danger:hover,
+.table-hover > tbody > tr > th.danger:hover,
+.table-hover > tbody > tr.danger:hover > td,
+.table-hover > tbody > tr:hover > .danger,
+.table-hover > tbody > tr.danger:hover > th {
+  background-color: #ebcccc;
+}
+.table-responsive {
+  overflow-x: auto;
+  min-height: 0.01%;
+}
+
+.myLabel{
+  width: auto; 
+  padding: 0 10px;
+  margin: 0 10px;
+}
+
+.mixpanel-platform-select.event_selector_theme{
+  width: 150px;
+}
+.mixpanel-platform-select.event_selector_theme, .mixpanel-platform-select.event_selector_theme .select_button, .mixpanel-platform-select.event_selector_theme .select-menu{
+  min-width: 100px !important;
+}
+
+    </style>
   </head>
-  <body class="mixpanel-platform-body">
-    <h1>Hello, World!</h1>
+
+<body class="mixpanel-platform-body">
+    <div class="mixpanel-platform-section" style="height: 60px;">
+
+      <div class="mixpanel-platform-label myLabel" style="margin-left: 0;">Notification Campaigns for the last</div>
+      <div id="historySelect" style="float: left;"></div>
+
+      <div class="mixpanel-platform-label myLabel">Conversion criteria</div>
+      <div id="numberSelect" style="float: left;"></div>
+      <div id="bucketSelect" style="float: left;"></div>
+    </div>
+
+    <div class="mixpanel-platform-section">
+      
+    <table id="myTable" class="table table-striped">
+    <thead>
+        <tr>
+          <th>Campaign ID</th>
+          <th>Initial Date</th>
+          <th>Notifications sent</th>
+          <th id="secondEvent">Second event</th>
+          <th>Conversion rate</th>
+        </tr>
+    </thead>
+    <tbody>
+      
+    </tbody>
+    </table>
+    
     <script>
-      // Run queries and display results here
+      MP.api.ready(function(){
+
+        var nDays = 1,
+            nLimit = 1000,
+            windowBucket = 'day',
+            windowLength = 1,
+            myTable = $('#myTable'),
+            compareEvent = 'Viu dashboard';
+
+        var historySelect = $('#historySelect').MPSelect({items: [
+          {value: 7, label: '7 days'},
+          {value: 15, label: '15 days'},
+          {value: 30, label: '30 days'},
+          {value: 60, label: '60 days'},
+          {value: 90, label: '90 days'}
+        ]});
+
+        var bucketSelect = $('#bucketSelect').MPSelect({items: [
+          {value: 'day', label: 'days'},
+          {value: 'hour', label: 'hours'},
+          {value: 'minute', label: 'minutes'},
+          {value: 'second', label: 'seconds'}
+        ]});
+
+
+        
+        var numberSelectOptions = [];
+        for(var i = 1; i < 61; i++){
+          numberSelectOptions.push({value: ''+i, label: ''+i});
+        }
+
+        var numberSelect = $('#numberSelect').MPSelect({items: numberSelectOptions });
+
+        historySelect.on('change', function(e, days) {
+          nDays = days;
+          nLimit = 1000;
+          populateTable();
+        });
+
+        bucketSelect.on('change', function(e, value) {
+          windowBucket = value;
+          doFunnels();
+        });
+
+        numberSelect.on('change', function(e, value) {
+          windowLength = value;
+          doFunnels();
+        });
+
+        var campaignIDs = ['832763', '578319', '578339'];
+      
+      var campaigns = [
+      { id: 832763, name: "ENG Dis -  D+15+7 Android (Bulldozer)"},
+      { id: 578319, name: "ENG Dis -  D+15 Android"},
+      { id: 578339, name: "ENG Dis -  D+15 Android"}
+      ];
+    
+        //filling up the table
+        function populateTable(){
+          myTable.find('tbody tr').remove();
+
+          var params = {
+            from: moment().subtract(nDays, 'days'), 
+            to: moment(),
+            limit: nLimit,
+            unit: 'day',
+            where: '"push" in string(properties["message_type"])'
+          };
+
+          MP.api.segment('$campaign_delivery', 'campaign_id', params).done(function(results) {
+              var rows = '';
+              _.each(results.values(), function(campaign, id){
+                
+                if($.inArray(id,campaignIDs) > -1){
+
+                  var count = 0, dates = [];
+                  _.each(campaign,function(value, key){
+                    if(value > 0){
+                      dates.push(key);
+                    }
+                    count+= value;
+                  });
+
+                  //order the dates in case they come out of order
+                  dates.sort(function (a, b) {
+                      if (a < b) return -1;
+                      if (b < a) return 1;
+                      return 0;
+                  });
+                  
+                  rows+= '<tr data-funnel="false" data-campaign="'+id+'" data-start="'+dates[0]+'" id="row-'+id+'"><td>'+id+'</td><td class="cDate">'+dates[0]+'</td><td>'+count+'</td><td class="nConversion"></td><td class="pConversion"></td></tr>';
+                }
+
+              });
+
+              myTable.append(rows);
+              doFunnels();
+
+          });
+        }// populateTable ends
+
+        function doFunnels(){
+
+          $('#secondEvent').html(compareEvent+' conversions');
+
+          myTable.find('tbody tr').each(function(){
+            var row = $(this),
+                campaign = row.data('campaign'),
+                sDate = row.data('start'),
+                iDate = new Date(sDate),
+                fDate = new Date(sDate);
+
+            fDate.setDate(iDate.getDate()+6);
+            
+            sendFunnelRequest(campaign, iDate, fDate);
+
+          });
+        }// doFunnels ends
+
+        function formatDate(date){
+          return date.getFullYear() + '-' + (date.getMonth()+1) + '-' +date.getDate();
+        }
+
+        function sendFunnelRequest(campaign, iDate, fDate){
+          var params = {
+            from: formatDate(iDate),
+            to: formatDate(fDate),
+            limit: 100,
+            length_unit: windowBucket,
+            length: windowLength,
+            unit: 'week'
+          };
+
+          var event1 = {
+              event: '$campaign_delivery',
+              selector: 'properties[\"campaign_id\"] == '+campaign
+          };
+
+          var event2 = {
+              event: compareEvent,
+              selector: 'properties[\"campaign_id\"] == '+campaign+' or (not defined (properties[\"campaign_id\"]))'
+          };
+
+          MP.api.funnel(event1, event2, params).done(function(funnel) {
+              $.each(funnel[1],function(key, value){
+
+                var percentage = value.overall_conv_ratio,
+                    percentageShort = percentage.toFixed(2);
+                
+                var bgValue = 'rgba(155,191,55,'+percentageShort+')';
+
+                myTable.find('#row-'+campaign+' .nConversion').html(value.count).css('backgroundColor',bgValue);
+
+                myTable.find('#row-'+campaign+' .pConversion').html(((percentage*100).toFixed(2))+'%').css('backgroundColor',bgValue);
+              });
+          });
+
+        }//sendFunnelRequest ends
+        
+        populateTable();
+      });
     </script>
+    </div>
   </body>
 </html>
